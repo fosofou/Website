@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700|Old+Standard+TT&display=swap&subset=cyrillic" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <title>Граф математики</title>
   </head>
 
@@ -20,14 +20,19 @@
     <section class="hero-image">
       <div class = 'container'>
         <h1 class="heading">Представление математики с помощью графа</h1>
-        <a href = '/'><p>Кнопочка</p><a>
+        <p><a class = 'href-graph' href = "{% url 'graph' %}">Переход к графу</a></p>
       </div>
     </section>
   </div>
     <section class="intro">
-      <h2 class="subheading">Давайте познакомимся</h2>
+      <h2 class="subheading">Какая-то инфа проекту</h2>
+        {%for post in posts%}
+          <h1><a href = '/'>{{post.title}}<a></h1>
+          <p>{{post.text}}</p>
+          <p>published: {{post.published_date}}</p>
+        {%endfor%}
       <h3>Пара слов о себе</h3>
-      <p>Текст с парой слов о себе.</p>
+
       <h3>Чем могу быть полезен</h3>
       <p>Текст о том, чем могу быть полезен.</p>
     </section>
