@@ -1,22 +1,5 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700|Old+Standard+TT&display=swap&subset=cyrillic" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <title>Граф математики</title>
-  </head>
-
-  <body>
-
-    <header class="page-header">
-      <div class = 'container'>
-        Контакты разработчиков
-        <a href="/"> Ебала <a>
-      </div>
-    </header>
-
+{%extends "blog/base.html" %}
+{%block content%}
     <section class="hero-image">
       <div class = 'container'>
         <h1 class="heading">Представление математики с помощью графа</h1>
@@ -27,7 +10,7 @@
     <section class="intro">
       <h2 class="subheading">Какая-то инфа проекту</h2>
         {%for post in posts%}
-          <h1><a href = '/'>{{post.title}}<a></h1>
+          <h1><a href = "{% url 'post_detail' pk=post.pk %}">{{post.title}}<a></h1>
           <p>{{post.text}}</p>
           <p>published: {{post.published_date}}</p>
         {%endfor%}
@@ -46,10 +29,4 @@
       <h3>Блог начинающего верстальщика</h3>
       <p>Статический блог про обучение HTML и CSS.</p>
     </section>
-
-    <footer class="page-footer">
-      Контакты в подвале
-    </footer>
-
-  </body>
-</html>
+{%endblock%}

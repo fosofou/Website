@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700|Old+Standard+TT&display=swap&subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>Граф математики</title>
+  </head>
+
+  <body>
+
+    <header class="page-header">
+      <div class = 'container'>
+        Контакты разработчиков
+        <a href="/"> Ебала <a>
+      </div>
+    </header>
+    {%block content%}
+    {%endblock%}
+    <footer class="page-footer">
+      Контакты в подвале
+    </footer>
+
+  </body>
+</html>
